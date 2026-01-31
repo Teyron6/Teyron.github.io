@@ -1,13 +1,15 @@
+from dotenv import load_dotenv
 import json
+import os
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from livereload import Server
 from more_itertools import chunked
-import os
-from dotenv import load_dotenv
+
 
 
 def on_reload():
-    with open (os.getenv('META_DATA', default='./meta_data.json') , 'r', encoding="utf8") as file:
+    with open (os.getenv('META_DATA', default='./meta_data.json') , 'r', encoding='utf8') as file:
         meta_data = json.load(file)
 
     env = Environment(
