@@ -1,7 +1,7 @@
-from dotenv import load_dotenv
 import json
 import os
 
+from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from livereload import Server
 from more_itertools import chunked
